@@ -18,7 +18,7 @@ function Layout({
     <div
       className={`${showMenu ? styles.smMainContent : styles.lgMainContent}`}
     >
-      {activeIndex === 0 && <Home />}
+      {activeIndex === 0 && <Home setActiveIndex={setActiveIndex} />}
       {activeIndex === 1 && <Products />}
       {activeIndex === 2 && <Orders />}
       {activeIndex === 3 && <Categories />}

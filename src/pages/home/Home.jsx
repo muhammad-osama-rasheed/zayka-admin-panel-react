@@ -2,7 +2,7 @@ import React from "react";
 import Cards from "../../components/card/Cards";
 import Chart from "../../components/charts/Chart";
 
-function Home() {
+function Home({ setActiveIndex }) {
   const cardItems = [
     {
       id: 1,
@@ -34,7 +34,12 @@ function Home() {
       <div className="row d-flex justify-content-center align-items-center">
         {cardItems.map((item, index) => (
           <div key={index} className="col-lg-3 col-md-4 col-6">
-            <Cards count={item.count} title={item.title} icon={item.icon} />
+            <Cards
+              count={item.count}
+              title={item.title}
+              icon={item.icon}
+              setActiveIndex={setActiveIndex}
+            />
           </div>
         ))}
       </div>
