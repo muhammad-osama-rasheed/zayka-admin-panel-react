@@ -1,0 +1,42 @@
+.innerContainer{
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 20px 35px rgba(70, 70, 70, 0.3);
+  margin: 0 auto;
+}
+
+.forgotText{
+  margin: 0;
+  text-align: end;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.forgotText:hover{
+  opacity: 0.8;
+}
+
+
+.logo{
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.welcomeText{
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 5px;
+  text-align: start;
+}
+
+.errorMessage{
+  color: red;
+  margin-top: 5px;
+  font-size: 12px;
+  font-family: "Quicksand", Arial, sans-serif;
+}

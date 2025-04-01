@@ -1,0 +1,18 @@
+.smBurger{
+  display: none;
+}
+
+
+@media (max-width: 600px){
+
+  .lightBurger{
+    display: none;
+  }
+
+  .smBurger{
+    display: block;
+  }
+  
+}
+
+

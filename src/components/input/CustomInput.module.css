@@ -1,0 +1,48 @@
+.container{
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 0.5px solid #ccc;
+  padding: 8px 15px;
+  margin-top: 10px;
+  font-size: 16px; 
+  border-radius: 25px;
+  font-family: "Quicksand", sans-serif;
+  transition: border-color 0.3s;
+}
+
+input {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-family: "Quicksand", sans-serif;
+  color: "#000000B3";
+  background: transparent;
+}
+
+input::placeholder{
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px; 
+}
+
+.label{
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background-color: #fff;
+  padding: 0 5px;
+  font-size: 12px;
+}
+
+.passwordIcon{
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+
+
+
+
+

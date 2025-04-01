@@ -1,0 +1,21 @@
+.container{
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.titleText{
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.container:hover{
+  opacity: 0.9;
+}

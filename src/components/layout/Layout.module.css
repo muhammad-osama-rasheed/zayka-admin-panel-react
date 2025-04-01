@@ -1,0 +1,19 @@
+.smMainContent{
+  width: calc(100% - 80px);
+  margin-left: 80px;
+  transition: all 0.5s;
+}
+
+.lgMainContent{
+  width: calc(100% - 260px);
+  margin-left: 260px;
+  transition: all 0.5s;
+}
+
+@media (max-width: 600px){
+  .smMainContent, .lgMainContent{
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
