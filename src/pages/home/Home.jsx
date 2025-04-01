@@ -1,44 +1,44 @@
-import React, { useState } from "react";
-import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
-import Loader from "../../components/loader/Loader";
+import React from "react";
+import Cards from "../../components/card/Cards";
+import Chart from "../../components/charts/Chart";
 
 function Home() {
-  const [loading, setLoading] = useState(false);
-
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    try {
-      setLoading(true);
-
-      setTimeout(() => {
-        localStorage.removeItem("name");
-        localStorage.removeItem("email");
-        localStorage.removeItem("jwtToken");
-        localStorage.removeItem("role");
-
-        toast.success("Logout Successfully!");
-
-        setLoading(false);
-
-        navigate("/login", { replace: true });
-      }, 1000);
-    } catch (error) {
-      console.error(error);
-      toast.error("An error occurred while logging out.");
-      setLoading(false);
-    }
-  };
-
+  const cardItems = [
+    {
+      id: 1,
+      title: "Products",
+      count: 30,
+      icon: "IoGrid",
+    },
+    {
+      id: 2,
+      title: "Total Orders",
+      count: 10,
+      icon: "IoBagCheck",
+    },
+    {
+      id: 3,
+      title: "Users",
+      count: 30,
+      icon: "IoPeople",
+    },
+    {
+      id: 4,
+      title: "Reviews",
+      count: 100,
+      icon: "IoBarChart",
+    },
+  ];
   return (
-    <>
-      {loading && <Loader />}
-
-      <div>
-        <h1>Welcome,Osama!</h1>
+    <div className="container my-4">
+      <div className="row d-flex justify-content-center align-items-center">
+        {cardItems.map((item, index) => (
+          <div key={index} className="col-lg-3 col-md-4 col-6">
+            <Cards count={item.count} title={item.title} icon={item.icon} />
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 }
 

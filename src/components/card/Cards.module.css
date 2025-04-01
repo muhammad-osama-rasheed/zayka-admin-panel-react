@@ -1,0 +1,43 @@
+.cardContainer{
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.04), 0 15px 30px rgba(0, 0, 0, 0.04);
+  border-radius: 25px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.cardContainer:hover{
+  transform: scale(1.07);
+  background-color: rgba(1, 68, 33, 0.07);
+}
+
+.innerContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detailsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.count{
+  font-size: 20px;
+  font-weight: 500;
+  color: #014421;
+}
+
+.title{
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #000000B3;
+}
+
+.icon{
+  color: #014421;
+  font-size: 24px;
+}

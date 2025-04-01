@@ -7,7 +7,13 @@ import Reviews from "../../pages/reviews/Reviews";
 import Logout from "../../pages/logout/Logout";
 import Categories from "../../pages/categories/Categories";
 import Users from "../../pages/users/Users";
-function Layout({ activeIndex, showMenu }) {
+function Layout({
+  activeIndex,
+  setActiveIndex,
+  showMenu,
+  showLogout,
+  setShowLogout,
+}) {
   return (
     <div
       className={`${showMenu ? styles.smMainContent : styles.lgMainContent}`}
@@ -18,7 +24,13 @@ function Layout({ activeIndex, showMenu }) {
       {activeIndex === 3 && <Categories />}
       {activeIndex === 4 && <Users />}
       {activeIndex === 5 && <Reviews />}
-      {activeIndex === 6 && <Logout />}
+      {activeIndex === 6 && (
+        <Logout
+          showLogout={showLogout}
+          setShowLogout={setShowLogout}
+          setActiveIndex={setActiveIndex}
+        />
+      )}
     </div>
   );
 }

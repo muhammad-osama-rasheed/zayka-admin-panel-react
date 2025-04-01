@@ -1,7 +1,13 @@
 import * as Icon from "react-icons/io5";
 import styles from "./Sidebar.module.css";
 
-function Sidebar({ showMenu, setShowMenu, activeIndex, setActiveIndex }) {
+function Sidebar({
+  showMenu,
+  setShowMenu,
+  activeIndex,
+  setActiveIndex,
+  setShowLogout,
+}) {
   const menuItems = [
     {
       id: 1,
@@ -91,6 +97,9 @@ function Sidebar({ showMenu, setShowMenu, activeIndex, setActiveIndex }) {
               onClick={() => {
                 setActiveIndex(index);
                 setShowMenu(true);
+                if (item.id === 7 && item.name === "Logout") {
+                  setShowLogout(true);
+                }
               }}
             >
               <a href="#">

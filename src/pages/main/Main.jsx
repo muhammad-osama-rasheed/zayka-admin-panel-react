@@ -6,6 +6,7 @@ import Layout from "../../components/layout/Layout";
 function Main() {
   const [showMenu, setShowMenu] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showLogout, setShowLogout] = useState(false);
   return (
     <>
       <Sidebar
@@ -13,9 +14,17 @@ function Main() {
         setShowMenu={setShowMenu}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
+        showLogout={showLogout}
+        setShowLogout={setShowLogout}
       />
       <Header showMenu={showMenu} setShowMenu={setShowMenu} />
-      <Layout showMenu={showMenu} activeIndex={activeIndex} />
+      <Layout
+        showMenu={showMenu}
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+        showLogout={showLogout}
+        setShowLogout={setShowLogout}
+      />
     </>
   );
 }
