@@ -105,6 +105,16 @@ function Categories() {
         ))}
       </div>
 
+      <div style={{ marginTop: "20px", marginBottom: "60px" }}>
+        <CategoryChart
+          burger={counts.Burger}
+          pizza={counts.Pizza}
+          seafood={counts["Sea Food"]}
+          sweets={counts.Sweets}
+          drinks={counts.Drinks}
+        />
+      </div>
+
       <div className="row my-3">
         <div className="col-12">
           <h2 className={`text-start ${styles.heading}`}>{category}</h2>
@@ -118,16 +128,6 @@ function Categories() {
         showEditIcon={true}
         showDeleteIcon={true}
       />
-
-      <div style={{ marginTop: "60px", marginBottom: "100px" }}>
-        <CategoryChart
-          burger={counts.Burger}
-          pizza={counts.Pizza}
-          seafood={counts["Sea Food"]}
-          sweets={counts.Sweets}
-          drinks={counts.Drinks}
-        />
-      </div>
     </div>
   );
 }

@@ -1,100 +1,100 @@
-// import React from "react";
-// import {
-//   PieChart,
-//   Pie,
-//   Cell,
-//   Tooltip,
-//   Legend,
-//   ResponsiveContainer,
-// } from "recharts";
-
-// const Chart = () => {
-//   // Sample data for categories (you can fetch this data from your backend)
-//   const data = [
-//     { name: "Pizza", value: 40 },
-//     { name: "Burgers", value: 30 },
-//     { name: "Drinks", value: 20 },
-//     { name: "Desserts", value: 10 },
-//   ];
-
-//   // Define colors for each slice of the pie chart
-//   const COLORS = ["#ff5733", "#33ff57", "#3357ff", "#f5a623"];
-
-//   return (
-//     <div
-//       style={{
-//         width: "100%",
-//         height: 300,
-//       }}
-//     >
-//       <h4>Orders by Category</h4>
-//       <ResponsiveContainer width="100%" height="100%">
-//         <PieChart>
-//           <Pie
-//             data={data}
-//             dataKey="value"
-//             nameKey="name"
-//             cx="50%"
-//             cy="50%"
-//             outerRadius={100}
-//             fill="#8884d8"
-//             label
-//           >
-//             {data.map((entry, index) => (
-//               <Cell
-//                 key={`cell-${index}`}
-//                 fill={COLORS[index % COLORS.length]}
-//               />
-//             ))}
-//           </Pie>
-//           <Tooltip />
-//           <Legend />
-//         </PieChart>
-//       </ResponsiveContainer>
-//     </div>
-//   );
-// };
-
-// export default Chart;
-
 import React from "react";
 import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
+  PieChart,
+  Pie,
+  Cell,
   Tooltip,
   Legend,
   ResponsiveContainer,
-  CartesianGrid,
 } from "recharts";
 
 const Chart = () => {
+  // Sample data for categories (you can fetch this data from your backend)
   const data = [
-    { name: "Pizza", value: 1 },
-    { name: "Burgers", value: 3 },
-    { name: "Drinks", value: 2 },
-    { name: "Desserts", value: 1 },
+    { name: "Pizza", value: 40 },
+    { name: "Burgers", value: 30 },
+    { name: "Drinks", value: 20 },
+    { name: "Desserts", value: 10 },
   ];
 
+  // Define colors for each slice of the pie chart
+  const COLORS = ["#ff5733", "#33ff57", "#3357ff", "#f5a623"];
+
   return (
-    <div style={{ width: "100%", height: 300 }}>
+    <div
+      style={{
+        width: "100%",
+        height: 300,
+      }}
+    >
       <h4>Orders by Category</h4>
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
+        <PieChart>
+          <Pie
+            data={data}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={100}
+            fill="#8884d8"
+            label
+          >
+            {data.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
+            ))}
+          </Pie>
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" fill="#8884d8" />
-        </BarChart>
+        </PieChart>
       </ResponsiveContainer>
     </div>
   );
 };
 
 export default Chart;
+
+// import React from "react";
+// import {
+//   BarChart,
+//   Bar,
+//   XAxis,
+//   YAxis,
+//   Tooltip,
+//   Legend,
+//   ResponsiveContainer,
+//   CartesianGrid,
+// } from "recharts";
+
+// const Chart = () => {
+//   const data = [
+//     { name: "Pizza", value: 1 },
+//     { name: "Burgers", value: 3 },
+//     { name: "Drinks", value: 2 },
+//     { name: "Desserts", value: 1 },
+//   ];
+
+//   return (
+//     <div style={{ width: "100%", height: 300 }}>
+//       <h4>Orders by Category</h4>
+//       <ResponsiveContainer width="100%" height="100%">
+//         <BarChart data={data}>
+//           <CartesianGrid strokeDasharray="3 3" />
+//           <XAxis dataKey="name" />
+//           <YAxis />
+//           <Tooltip />
+//           <Legend />
+//           <Bar dataKey="value" fill="#8884d8" />
+//         </BarChart>
+//       </ResponsiveContainer>
+//     </div>
+//   );
+// };
+
+// export default Chart;
 
 // import React from "react";
 // import {

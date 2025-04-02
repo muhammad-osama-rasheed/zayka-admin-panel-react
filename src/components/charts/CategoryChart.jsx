@@ -1,13 +1,11 @@
 import React from "react";
 import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
+  PieChart,
+  Pie,
+  Cell,
   Tooltip,
   Legend,
   ResponsiveContainer,
-  CartesianGrid,
 } from "recharts";
 
 const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
@@ -19,34 +17,53 @@ const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
     { name: "Drinks", Total: drinks },
   ];
 
+  // Theme-based colors
+  const COLORS = ["#014421", "#026b31", "#038f3b", "#05b24a", "#06d65a"];
+
   return (
-    <div style={{ width: "100%", height: 250 }}>
-      <h4
-        style={{
-          fontSize: "20px",
-          color: "rgba(1, 68, 33, 0.8)",
-          marginTop: "30px",
-          marginBottom: "40px",
-        }}
-      >
-        Product Distribution by Category
-      </h4>
+    <div
+      style={{
+        width: "100%",
+        height: 340,
+        // backgroundColor: "#f0f8f5",
+        // padding: "10px",
+        // borderRadius: "10px",
+      }}
+    >
+      <h4 style={{ color: "#014421", fontSize: "20px" }}>Orders by Category</h4>
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} margin={{ left: -20, right: 25 }}>
-          <CartesianGrid stroke="#e0e0e0" strokeDasharray="5 5" />
-          <XAxis dataKey="name" />
-          <YAxis />
+        <PieChart>
+          <Pie
+            data={data}
+            dataKey="Total"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={100}
+            fill="#014421"
+            label
+          >
+            {data.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
+            ))}
+          </Pie>
           <Tooltip
             contentStyle={{
-              backgroundColor: "#fff",
               color: "#014421",
-              fontSize: "14px",
               borderRadius: "5px",
             }}
           />
-          {/* <Legend wrapperStyle={{ fontSize: "18px", left: 5, bottom: -5 }} /> */}
-          <Bar dataKey="Total" fill=" #3b7d58" />
-        </BarChart>
+          <Legend
+            wrapperStyle={{
+              color: "#014421",
+              fontSize: "14px",
+              textAlign: "center",
+            }}
+          />
+        </PieChart>
       </ResponsiveContainer>
     </div>
   );
