@@ -1,41 +1,55 @@
 import React from "react";
 import styles from "./Products.module.css";
-import { IoSearchOutline } from "react-icons/io5";
 import DarkBgButton from "../../components/buttons/bgBtn/DarkBgButton";
-import {
-  IoTrashOutline,
-  IoCreateOutline,
-  IoInformationCircleOutline,
-} from "react-icons/io5";
+import { IoSearchOutline } from "react-icons/io5";
+import CustomTable from "../../components/table/CustomTable";
 function Products() {
-  const products = [
+  const tableHeading = [
+    {
+      key: "s.no",
+      label: "S.No",
+    },
+    {
+      key: "name",
+      label: "Name",
+    },
+    {
+      key: "image",
+      label: "Image",
+    },
+    {
+      key: "price",
+      label: "Price",
+    },
+    {
+      key: "category",
+      label: "Category",
+    },
+  ];
+
+  const tableValue = [
     {
       id: 1,
-      name: "Classic Burger",
-      image: "image_url",
-      price: 1200,
+      name: "Zayka Burger",
+      image: "https://via.placeholder.com/150",
+      price: "700",
       category: "Burger",
-      subcategory: "Burger",
     },
     {
       id: 2,
       name: "Classic Burger",
-      image: "image_url",
-      price: 1200,
+      image: "https://via.placeholder.com/150",
+      price: "300",
       category: "Burger",
-      subcategory: "Burger",
     },
     {
       id: 3,
-      name: "Classic Burger",
-      image: "image_url",
-      price: 1200,
-      category: "Burger",
-      subcategory: "Burger",
+      name: "Peri Peri Pizza",
+      image: "https://via.placeholder.com/150",
+      price: "1200",
+      category: "Pizza",
     },
   ];
-
-  console.log(products.length);
 
   return (
     <div className="container">
@@ -62,45 +76,13 @@ function Products() {
         </div>
       </div>
 
-      <div className={styles["table-container"]}>
-        <table className={styles["table"]}>
-          <thead>
-            <tr>
-              <th className={styles["table-heading"]}>S.No</th>
-              <th className={styles["table-heading"]}>Name</th>
-              <th className={styles["table-heading"]}>Image</th>
-              <th className={styles["table-heading"]}>Price</th>
-              <th className={styles["table-heading"]}>Category</th>
-              <th className={styles["table-heading"]}>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products &&
-              products.length > 0 &&
-              products.map((item, index) => (
-                <tr
-                  key={index}
-                  className={
-                    products.length !== index + 1 ? styles.valueRow : ""
-                  }
-                >
-                  <td className={styles["table-value"]}>{index + 1}</td>
-                  <td className={styles["table-value"]}>{item.name}</td>
-                  <td className={styles["table-value"]}>{item.image}</td>
-                  <td className={styles["table-value"]}>{item.price}</td>
-                  <td className={styles["table-value"]}>{item.category}</td>
-                  <td className={styles["table-value"]}>
-                    <div className="d-flex align-items-center justify-content-evenly">
-                      <IoInformationCircleOutline className={styles.icon} />
-                      <IoCreateOutline className={styles.icon} />
-                      <IoTrashOutline className={styles.icon} />
-                    </div>
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
-      </div>
+      <CustomTable
+        tableHeading={tableHeading}
+        tableValue={tableValue}
+        showInfoIcon={true}
+        showEditIcon={true}
+        showDeleteIcon={true}
+      />
     </div>
   );
 }

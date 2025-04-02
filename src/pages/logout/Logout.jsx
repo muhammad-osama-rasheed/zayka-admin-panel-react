@@ -43,6 +43,7 @@ function Logout({ showLogout, setShowLogout, setActiveIndex }) {
           setActiveIndex(0);
         }}
         size="sm"
+        centered
       >
         <Modal.Body>
           <div className="d-flex justify-content-end">

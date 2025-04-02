@@ -9,7 +9,7 @@
 }
 
 .cardContainer:hover{
-  transform: scale(1.07);
+  /* transform: scale(1.07); */
   background-color: rgba(1, 68, 33, 0.07);
 }
 

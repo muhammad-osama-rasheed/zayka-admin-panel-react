@@ -43,6 +43,10 @@ function Home({ setActiveIndex }) {
           </div>
         ))}
       </div>
+
+      
+
+ 
     </div>
   );
 }
