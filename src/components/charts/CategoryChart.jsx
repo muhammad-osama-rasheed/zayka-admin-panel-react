@@ -23,7 +23,7 @@ const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
     <div style={{ width: "100%", height: 250 }}>
       <h4
         style={{
-          fontSize: "24px",
+          fontSize: "20px",
           color: "rgba(1, 68, 33, 0.8)",
           marginTop: "30px",
           marginBottom: "40px",
@@ -32,7 +32,7 @@ const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
         Product Distribution by Category
       </h4>
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} margin={{ left: -15, right: 15 }}>
+        <BarChart data={data} margin={{ left: -20, right: 25 }}>
           <CartesianGrid stroke="#e0e0e0" strokeDasharray="5 5" />
           <XAxis dataKey="name" />
           <YAxis />
