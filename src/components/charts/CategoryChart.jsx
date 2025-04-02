@@ -17,20 +17,27 @@ const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
     { name: "Drinks", Total: drinks },
   ];
 
-  // Theme-based colors
-  const COLORS = ["#014421", "#026b31", "#038f3b", "#05b24a", "#06d65a"];
+  const COLORS = [
+    "rgba(1,68,33,1)",
+    "rgba(1,68,33,0.8)",
+    "rgba(1,68,33,0.6)",
+    "rgba(1,68,33,0.4)",
+    "rgba(1,68,33,0.2)",
+  ];
 
   return (
     <div
       style={{
         width: "100%",
-        height: 340,
+        height: 320,
         // backgroundColor: "#f0f8f5",
         // padding: "10px",
         // borderRadius: "10px",
       }}
     >
-      <h4 style={{ color: "#014421", fontSize: "20px" }}>Orders by Category</h4>
+      <h4 style={{ color: "#014421", fontSize: "20px" }}>
+        Prducts Distribution by Category
+      </h4>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
@@ -59,7 +66,7 @@ const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
           <Legend
             wrapperStyle={{
               color: "#014421",
-              fontSize: "14px",
+              fontSize: "12px",
               textAlign: "center",
             }}
           />
