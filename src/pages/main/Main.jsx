@@ -17,13 +17,14 @@ function Main() {
         showLogout={showLogout}
         setShowLogout={setShowLogout}
       />
-      <Header showMenu={showMenu} setShowMenu={setShowMenu} />
+      {/* <Header showMenu={showMenu} setShowMenu={setShowMenu} /> */}
       <Layout
         showMenu={showMenu}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
         showLogout={showLogout}
         setShowLogout={setShowLogout}
+        setShowMenu={setShowMenu}
       />
     </>
   );

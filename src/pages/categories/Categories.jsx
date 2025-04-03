@@ -105,7 +105,7 @@ function Categories() {
         ))}
       </div>
 
-      <div style={{ marginTop: "20px", marginBottom: "60px" }}>
+      <div style={{ marginTop: "20px", marginBottom: "30px" }}>
         <CategoryChart
           burger={counts.Burger}
           pizza={counts.Pizza}

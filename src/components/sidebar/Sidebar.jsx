@@ -87,7 +87,21 @@ function Sidebar({
         <div className={styles.overlay} onClick={() => setShowMenu(true)}></div>
       )}
       <div className={showMenu ? styles.closeNavigation : styles.navigation}>
+        <img
+          onClick={() => setShowMenu(!showMenu)}
+          className={styles.lightBurger}
+          style={{
+            width: "20px",
+            height: "20px",
+            cursor: "pointer",
+            marginTop: "15px",
+            marginLeft: "30px",
+          }}
+          src="/images/hamburger.png"
+          alt="hamburger"
+        />
         <ul>
+          <li></li>
           {menuItems.map((item, index) => (
             <li
               key={item.id}

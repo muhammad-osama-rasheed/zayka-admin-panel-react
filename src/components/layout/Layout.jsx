@@ -7,17 +7,20 @@ import Reviews from "../../pages/reviews/Reviews";
 import Logout from "../../pages/logout/Logout";
 import Categories from "../../pages/categories/Categories";
 import Users from "../../pages/users/Users";
+import Navbar from "../nav/Navbar";
 function Layout({
   activeIndex,
   setActiveIndex,
   showMenu,
   showLogout,
   setShowLogout,
+  setShowMenu,
 }) {
   return (
     <div
       className={`${showMenu ? styles.smMainContent : styles.lgMainContent}`}
     >
+      <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
       {activeIndex === 0 && <Home setActiveIndex={setActiveIndex} />}
       {activeIndex === 1 && <Products />}
       {activeIndex === 2 && <Orders />}

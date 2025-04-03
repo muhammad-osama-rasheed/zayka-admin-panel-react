@@ -1,18 +1,21 @@
-.smBurger{
+.headerContainer{
   display: none;
 }
 
 
 @media (max-width: 600px){
-
-  .lightBurger{
-    display: none;
-  }
-
-  .smBurger{
+  .headerContainer{
     display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
   }
-  
 }
+
+
+
+
 
 

@@ -1,0 +1,25 @@
+.navContainer{
+ display: none;
+}
+
+@media (max-width: 600px){
+
+  .navContainer{
+    display: block;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    z-index: 25;
+  }
+
+
+  .burger{
+    display: block;
+  }
+  .nav{
+    margin-top: 15px;
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+  }
+}

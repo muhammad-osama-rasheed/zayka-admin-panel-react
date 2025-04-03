@@ -30,16 +30,13 @@ const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
       style={{
         width: "100%",
         height: 320,
-        // backgroundColor: "#f0f8f5",
-        // padding: "10px",
-        // borderRadius: "10px",
       }}
     >
       <h4 style={{ color: "#014421", fontSize: "20px" }}>
-        Prducts Distribution by Category
+        Products Distribution by Category
       </h4>
       <ResponsiveContainer width="100%" height="100%">
-        <PieChart>
+        <PieChart style={{ zIndex: -1 }}>
           <Pie
             data={data}
             dataKey="Total"
@@ -63,13 +60,13 @@ const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
               borderRadius: "5px",
             }}
           />
-          <Legend
+          {/* <Legend
             wrapperStyle={{
               color: "#014421",
-              fontSize: "12px",
+              fontSize: "10px",
               textAlign: "center",
             }}
-          />
+          /> */}
         </PieChart>
       </ResponsiveContainer>
     </div>
