@@ -107,7 +107,7 @@ const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
             },
           ]}
           width={400}
-          height={300}
+          height={250}
           tooltip={{ trigger: "item" }}
         />
       </div>

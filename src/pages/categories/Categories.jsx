@@ -105,7 +105,7 @@ function Categories() {
         ))}
       </div>
 
-      <div style={{ marginTop: "20px", marginBottom: "30px" }}>
+      <div style={{ marginTop: "20px" }}>
         <CategoryChart
           burger={counts.Burger}
           pizza={counts.Pizza}
@@ -115,7 +115,7 @@ function Categories() {
         />
       </div>
 
-      <div className="row my-3">
+      <div className="row mt-1 mb-3">
         <div className="col-12">
           <h2 className={`text-start ${styles.heading}`}>{category}</h2>
         </div>
