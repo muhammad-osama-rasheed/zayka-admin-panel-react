@@ -16,6 +16,8 @@ function Loader() {
         justifyContent: "center",
         alignItems: "center",
         zIndex: 1000,
+        overflow: "hidden",
+        transition: "backgroundColor 0.5s ease-in-out",
       }}
     >
       <Lottie
