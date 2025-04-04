@@ -5,8 +5,8 @@ import styles from "./Navbar.module.css";
 
 function Navbar({ showMenu, setShowMenu }) {
   return (
-    <div className={`${styles.navContainer} w-100`}>
-      <div className={styles.nav}>
+    <div className={showMenu ? styles.navContainer : styles.navbarContainer}>
+      <div className={`${styles.nav}`}>
         <img
           onClick={() => setShowMenu(!showMenu)}
           className={styles.burger}
@@ -18,6 +18,16 @@ function Navbar({ showMenu, setShowMenu }) {
           src="/images/burger.png"
           alt="hamburger"
         />
+
+        <div className="d-flex align-items-center">
+          <MdAccountCircle size={20} color={DARK_GREEN} />
+          <span
+            style={{ fontSize: "14px", fontWeight: "500" }}
+            className="ms-1"
+          >
+            Muhammad Osama
+          </span>
+        </div>
       </div>
     </div>
   );

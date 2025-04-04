@@ -12,7 +12,7 @@ function Header({ showMenu, setShowMenu }) {
           style={{
             width: "20px",
             height: "20px",
-            zIndex: 999,
+            zIndex: 30,
             cursor: "pointer",
             margin: "15px 25px",
           }}

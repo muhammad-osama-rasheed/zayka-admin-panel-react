@@ -90,7 +90,7 @@ function Categories() {
   }, [category]);
 
   return (
-    <div className="container py-4">
+    <div className="container pb-4">
       <div className="row d-flex justify-content-center align-items-center">
         {cardItems.map((item) => (
           <div key={item.id} className="col-lg-3 col-md-4 col-6">
