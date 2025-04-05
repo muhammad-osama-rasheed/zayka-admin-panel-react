@@ -205,6 +205,7 @@
   height: 100vh;
   /* backdrop-filter: blur(5px);  */
   background-color: rgba(0,0,0,0.9);
+  z-index: 28;
 }
 
 .lightOverlay {
@@ -214,6 +215,7 @@
   width: 100%;
   height: 100vh;
   background-color: rgba(255,255,255,0.9);
+  z-index: 28;
 }
 }
 
