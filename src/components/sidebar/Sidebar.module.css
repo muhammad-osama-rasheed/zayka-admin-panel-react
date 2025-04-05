@@ -40,16 +40,20 @@
   margin-bottom: 10px;
 }
 
-
-
 .unActive:hover {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 30px;
   width: 90%;
 }
 
-.navigation ul li.active,
-.closeNavigation ul li.active
+.navigation ul li.darkActive,
+.closeNavigation ul li.darkActive
+{
+  background-color: #000;
+}
+
+.navigation ul li.lightActive,
+.closeNavigation ul li.lightActive
 {
   background-color: #fff;
 }
@@ -77,10 +81,16 @@
 }
 
 
-.navigation ul li.active a,
-.closeNavigation ul li.active a
+.navigation ul li.lightActive a,
+.closeNavigation ul li.lightActive a
 {
  color: #014421;
+}
+
+.navigation ul li.darkActive a,
+.closeNavigation ul li.darkActive a
+{
+ color: #fff;
 }
 
 
@@ -109,8 +119,38 @@
   text-overflow: ellipsis;
 }
 
-.navigation ul li.active a::before,
-.closeNavigation ul li.active a::before
+.navigation ul li.darkActive a::before,
+.closeNavigation ul li.darkActive a::before
+{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px #000;
+  pointer-events: none;
+}
+
+.navigation ul li.darkActive a::after,
+.closeNavigation ul li.darkActive a::after
+{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px #000;
+  pointer-events: none;
+}
+
+.navigation ul li.lightActive a::before,
+.closeNavigation ul li.lightActive a::before
 {
   content: "";
   position: absolute;
@@ -124,8 +164,8 @@
   pointer-events: none;
 }
 
-.navigation ul li.active a::after,
-.closeNavigation ul li.active a::after
+.navigation ul li.lightActive a::after,
+.closeNavigation ul li.lightActive a::after
 {
   content: "";
   position: absolute;
@@ -140,7 +180,7 @@
 }
 
 
-.overlay {
+.lightOverlay, .darkOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -157,14 +197,23 @@
     border-left: 0px;
   } 
 
-.overlay {
+.darkOverlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   /* backdrop-filter: blur(5px);  */
-  background-color: rgba(255 255,255,0.9);
+  background-color: rgba(0,0,0,0.9);
+}
+
+.lightOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255,255,255,0.9);
 }
 }
 

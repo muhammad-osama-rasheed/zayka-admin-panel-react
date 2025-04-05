@@ -1,4 +1,4 @@
-.searchContainer{
+.lightSearchContainer{
   width: 100%;
   display: flex;
   justify-content: center;
@@ -6,7 +6,15 @@
   margin-bottom: 10px;
 }
 
-.searchBar{
+.darkSearchContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.lightSearchContainer .searchBar{
   display: flex;
   align-items: center;
   padding: 8px 10px;
@@ -15,9 +23,18 @@
   width: 600px;
 }
 
+.darkSearchContainer .searchBar{
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 25px;
+  background-color: rgba(255,255,255,0.05);
+  width: 600px;
+}
+
 .searchBar:has(.searchInput:focus) {
   background-color: #f0f8f0; 
-  transition: background-color 0.3s ease;
+  transition: background-color 0.5s ease;
 }
 .searchInput{
   display: flex;
@@ -39,9 +56,8 @@
   font-weight: 500;
   margin-top: 30px;
   margin-bottom: 10px;
+  transition: color 0.5s ease;
 }
-
-
 
 .table-container{
   max-height: 1000px;

@@ -1,6 +1,5 @@
 import React from "react";
 import Cards from "../../components/card/Cards";
-import Chart from "../../components/charts/Chart";
 
 function Home({ setActiveIndex }) {
   const cardItems = [

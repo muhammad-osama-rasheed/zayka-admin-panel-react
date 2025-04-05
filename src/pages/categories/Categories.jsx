@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CategoryCards from "../../components/card/CategoryCards";
 import styles from "./Categories.module.css";
 import { tableValue } from "../../utils/data/ProductData";
 import CustomTable from "../../components/table/CustomTable";
 import CategoryChart from "../../components/charts/CategoryChart";
+import MyContext from "../../context/MyContext";
 
 function Categories() {
+  const context = useContext(MyContext);
+  const { theme } = context;
+
   const [category, setCategory] = useState("Burger");
   const [filteredData, setFilteredData] = useState([]);
   const [counts, setCounts] = useState({
@@ -117,7 +121,14 @@ function Categories() {
 
       <div className="row mt-1 mb-3">
         <div className="col-12">
-          <h2 className={`text-start ${styles.heading}`}>{category}</h2>
+          <h2
+            style={{
+              color: theme === "dark" ? "#fff" : "rgba(1, 68, 33, 0.8)",
+            }}
+            className={`text-start ${styles.heading}`}
+          >
+            {category}
+          </h2>
         </div>
       </div>
 

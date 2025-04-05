@@ -1,4 +1,4 @@
-.table-container{
+.light-table-container{
   max-height: 1000px;
   width: 100%;
   overflow: auto;
@@ -8,6 +8,19 @@
   box-shadow: 0 7px 25px 7px rgba(0,0,0,0.08);
   border-radius: 25px;
   margin-top: 20px;
+  border: 1px solid transparent;
+}
+
+.dark-table-container{
+  max-height: 1000px;
+  width: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  margin-top: 20px;
+  border: 1px solid #014421;
 }
 
 .table{
@@ -21,20 +34,38 @@
   font-family: "Quicksand", Arial, sans-serif;
 }
 
-.table-heading{
+.light-table-container .table-heading{
 color: rgba(1,68,33,0.7);
 text-transform: uppercase;
 font-size: 13px;
 letter-spacing: 2px;
+background-color: #fff;
+transition: background-color color 0.5s;
 }
 
-.table-value{
+.dark-table-container .table-heading{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  background-color: #014421;
+  transition: background-color color 0.5s;
+}
+
+.light-table-container .table-value{
   font-size: 12px;
   color: #666666;
   background-color: rgba(1,68,33,0.2);
   cursor: pointer;
-  transition: background-color 0.3s;  
-  transition: color 0.3s; 
+  transition: color background-color 0.5s; 
+}
+
+.dark-table-container .table-value{
+  font-size: 12px;
+  color: #fff;
+  background-color: rgba(1,68,33,0.2);
+  cursor: pointer;
+  transition: color background-color 0.5s; 
 }
 
 .icon{
@@ -42,9 +73,14 @@ letter-spacing: 2px;
   transition: 0.5s;
 }
 
-.icon:hover{
+.light-table-container .icon:hover{
   transform: scale(1.5);
   color: #014421;
+}
+
+.dark-table-container .icon:hover{
+  transform: scale(1.5);
+  color: #fff;
 }
 
 .valueRow{

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Cards.module.css";
 import * as Icon from "react-icons/io5";
+import MyContext from "../../context/MyContext";
 
 function Cards({ count, title, icon, setActiveIndex }) {
+  const context = useContext(MyContext);
+  const { theme } = context;
   const IconComponent = Icon[icon];
   return (
     <div
@@ -19,7 +22,7 @@ function Cards({ count, title, icon, setActiveIndex }) {
             : ""
         );
       }}
-      className={styles.cardContainer}
+      className={theme == "dark" ? styles.darkCardContainer : styles.lightCardContainer}
     >
       <div className={styles.innerContainer}>
         <div className={styles.detailsContainer}>

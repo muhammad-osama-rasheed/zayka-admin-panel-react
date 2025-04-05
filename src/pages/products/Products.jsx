@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Products.module.css";
 import DarkBgButton from "../../components/buttons/bgBtn/DarkBgButton";
 import { IoSearchOutline } from "react-icons/io5";
 import CustomTable from "../../components/table/CustomTable";
+import MyContext from "../../context/MyContext";
+import { DARK_GREEN } from "../../utils/colors/Colors";
 function Products() {
+  const context = useContext(MyContext);
+  const { theme } = context;
   const tableHeading = [
     {
       key: "s.no",
@@ -53,7 +57,13 @@ function Products() {
 
   return (
     <div className="container">
-      <div className={styles.searchContainer}>
+      <div
+        className={
+          theme === "dark"
+            ? styles.darkSearchContainer
+            : styles.lightSearchContainer
+        }
+      >
         <div className={styles.searchBar}>
           <IoSearchOutline className={styles.searchIcon} />
           <input
@@ -66,7 +76,12 @@ function Products() {
 
       <div className="row px-1">
         <div className="col-12">
-          <h4 className={styles.heading}>All Products</h4>
+          <h4
+            style={{ color: theme === "dark" ? "#ffffff" : DARK_GREEN }}
+            className={styles.heading}
+          >
+            All Products
+          </h4>
         </div>
       </div>
 

@@ -8,8 +8,13 @@ import React from "react";
 //   ResponsiveContainer,
 // } from "recharts";
 import { PieChart } from "@mui/x-charts/PieChart";
+import { useContext } from "react";
+import MyContext from "../../context/MyContext";
 
 const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
+  const context = useContext(MyContext);
+  const { theme } = context;
+
   const data = [
     { name: "Burgers", Total: burger },
     { name: "Pizza", Total: pizza },
@@ -72,8 +77,14 @@ const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
     //   </ResponsiveContainer>
     // </div>
     <>
-      <h4 style={{ color: "#014421", fontSize: "20px" }}>
-        Products Distribution by Category
+      <h4
+        style={{
+          color: theme === "dark" ? "#fff" : "#014421",
+          fontSize: "20px",
+          transition: "color 0.5s",
+        }}
+      >
+        Products Category Breakdown
       </h4>
       <div
         style={{
@@ -104,11 +115,20 @@ const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
               cornerRadius: 3,
               animation: { duration: 1000, easing: "ease-in-out" },
               label: true,
+              labelColor: "#fff",
             },
           ]}
-          width={400}
+          width={370}
           height={250}
           tooltip={{ trigger: "item" }}
+          slotProps={{
+            legend: {
+              labelStyle: {
+                fill: theme === "dark" ? "#fff" : "#000000B3",
+                // fontSize: 14,
+              },
+            },
+          }}
         />
       </div>
     </>

@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { MdAccountCircle } from "react-icons/md";
 import { DARK_GREEN } from "../../utils/colors/Colors";
 import styles from "./Navbar.module.css";
+import MyContext from "../../context/MyContext";
+import { Switch } from "@mui/material";
 
 function Navbar({ showMenu, setShowMenu }) {
+  const context = useContext(MyContext);
+  const { theme, toggleTheme } = context;
+  const [checked, setChecked] = useState(false);
+
   return (
-    <div className={showMenu ? styles.navContainer : styles.navbarContainer}>
+    <div
+      style={{
+        backgroundColor: theme === "dark" ? "#000" : "#fff",
+        borderBottom: theme === "dark" ? "1px dotted #014421" : "",
+        color: theme === "dark" ? "#fff" : "",
+      }}
+      className={showMenu ? styles.navContainer : styles.navbarContainer}
+    >
       <div className={`${styles.nav}`}>
         <img
           onClick={() => setShowMenu(!showMenu)}
@@ -20,13 +33,41 @@ function Navbar({ showMenu, setShowMenu }) {
         />
 
         <div className="d-flex align-items-center">
-          <MdAccountCircle size={20} color={DARK_GREEN} />
+          <MdAccountCircle
+            size={16}
+            color={theme === "dark" ? "#fff" : DARK_GREEN}
+          />
           <span
             style={{ fontSize: "14px", fontWeight: "500" }}
             className="ms-1"
           >
-            Muhammad Osama
+            Osama
           </span>
+
+          <div>
+            <Switch
+              checked={checked}
+              onChange={() => {
+                setChecked(!checked);
+                toggleTheme();
+              }}
+              color="success"
+              icon={
+                <img
+                  src="/images/light.png"
+                  alt="light"
+                  style={{ width: "20px", height: "20px" }}
+                />
+              }
+              checkedIcon={
+                <img
+                  src="/images/dark.png"
+                  alt="dark"
+                  style={{ width: "20px", height: "20px" }}
+                />
+              }
+            />
+          </div>
         </div>
       </div>
     </div>

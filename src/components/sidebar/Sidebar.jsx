@@ -1,5 +1,7 @@
 import * as Icon from "react-icons/io5";
 import styles from "./Sidebar.module.css";
+import { useContext } from "react";
+import MyContext from "../../context/MyContext";
 
 function Sidebar({
   showMenu,
@@ -8,6 +10,8 @@ function Sidebar({
   setActiveIndex,
   setShowLogout,
 }) {
+  const context = useContext(MyContext);
+  const { theme } = context;
   const menuItems = [
     {
       id: 1,
@@ -84,7 +88,12 @@ function Sidebar({
   return (
     <>
       {!showMenu && (
-        <div className={styles.overlay} onClick={() => setShowMenu(true)}></div>
+        <div
+          className={
+            theme === "dark" ? styles.darkOverlay : styles.lightOverlay
+          }
+          onClick={() => setShowMenu(true)}
+        ></div>
       )}
       <div className={showMenu ? styles.closeNavigation : styles.navigation}>
         <img
@@ -106,7 +115,11 @@ function Sidebar({
             <li
               key={item.id}
               className={
-                activeIndex === index ? styles.active : styles.unActive
+                activeIndex === index
+                  ? theme === "dark"
+                    ? styles.darkActive
+                    : styles.lightActive
+                  : styles.unActive
               }
               onClick={() => {
                 setActiveIndex(index);

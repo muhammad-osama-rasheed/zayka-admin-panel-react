@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./CustomTable.module.css";
 import {
   IoTrashOutline,
   IoCreateOutline,
   IoInformationCircleOutline,
 } from "react-icons/io5";
+import MyContext from "../../context/MyContext";
 
 function CustomTable({
   tableHeading,
@@ -13,8 +14,16 @@ function CustomTable({
   showEditIcon,
   showDeleteIcon,
 }) {
+  const context = useContext(MyContext);
+  const { theme } = context;
   return (
-    <div className={styles["table-container"]}>
+    <div
+      className={
+        theme === "dark"
+          ? styles["dark-table-container"]
+          : styles["light-table-container"]
+      }
+    >
       <table className={styles["table"]}>
         <thead>
           <tr>
