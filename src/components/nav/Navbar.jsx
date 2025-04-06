@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
-import { MdAccountCircle } from "react-icons/md";
+import { MdAccountCircle, MdLightMode, MdDarkMode } from "react-icons/md";
 import { DARK_GREEN } from "../../utils/colors/Colors";
 import styles from "./Navbar.module.css";
 import MyContext from "../../context/MyContext";
-import { Switch } from "@mui/material";
+// import { Switch } from "@mui/material";
 
 function Navbar({ showMenu, setShowMenu }) {
   const context = useContext(MyContext);
   const { theme, toggleTheme } = context;
-  const [checked, setChecked] = useState(false);
+  // const [checked, setChecked] = useState(false);
 
   return (
     <div
@@ -44,7 +44,7 @@ function Navbar({ showMenu, setShowMenu }) {
             Osama
           </span>
 
-          <div>
+          {/* <div>
             <Switch
               checked={checked}
               onChange={() => {
@@ -67,7 +67,30 @@ function Navbar({ showMenu, setShowMenu }) {
                 />
               }
             />
-          </div>
+          </div> */}
+          {theme === "light" ? (
+            <MdLightMode
+              style={{
+                cursor: "pointer",
+                transition: "all 0.5s",
+                marginLeft: "8px",
+              }}
+              onClick={() => toggleTheme()}
+              size={16}
+              color={theme === "dark" ? "#fff" : DARK_GREEN}
+            />
+          ) : (
+            <MdDarkMode
+              style={{
+                cursor: "pointer",
+                transition: "all 0.5s",
+                marginLeft: "8px",
+              }}
+              onClick={() => toggleTheme()}
+              size={16}
+              color={theme === "dark" ? "#fff" : DARK_GREEN}
+            />
+          )}
         </div>
       </div>
     </div>
