@@ -14,7 +14,7 @@ function Navbar({ showMenu, setShowMenu }) {
     <div
       style={{
         backgroundColor: theme === "dark" ? "#000" : "#fff",
-        borderBottom: theme === "dark" ? "1px dotted #014421" : "",
+        // borderBottom: theme === "dark" ? "1px dotted #014421" : "",
         color: theme === "dark" ? "#fff" : "",
       }}
       className={showMenu ? styles.navContainer : styles.navbarContainer}
@@ -68,7 +68,7 @@ function Navbar({ showMenu, setShowMenu }) {
               }
             />
           </div> */}
-          {theme === "light" ? (
+          {theme === "dark" ? (
             <MdLightMode
               style={{
                 cursor: "pointer",
