@@ -1,0 +1,92 @@
+.categoryContainer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.5px solid #ccc;
+  padding: 8px 15px;
+  margin-top: 10px;
+  font-size: 14px;
+  border-radius: 25px;
+  font-family: "Quicksand", sans-serif;
+  transition: border-color 0.3s;
+  background-color: #f0f8f0;
+  cursor: pointer;
+}
+
+.dropdownContainer {
+  width: 120px;
+  position: absolute;
+  border-radius: 25px;
+  margin-top: 5px;
+  background-color: #f0f8f0;
+  border: 0.5px solid #ccc;
+}
+
+.options{
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.options:hover{
+  background-color: rgba(1, 68, 33, 0.3);;
+  color: #014421;
+}
+
+.option1{
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.option1:hover{
+  background-color: rgba(1, 68, 33, 0.3);
+  color: #014421;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.option5{
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.option5:hover{
+  background-color: rgba(1, 68, 33, 0.3);;
+  color: #014421;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.file-input{
+  border: 0.4px solid #CCC;
+  margin-top: 20px;
+  border-radius: 25px;
+  width: 100%;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-size: 14px;
+}
+
+.file-input::-webkit-file-upload-button{
+  background-color: #014421 ;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer; 
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.file-input::-webkit-file-upload-button:hover{
+ opacity: 0.8;
+}
+
+
+

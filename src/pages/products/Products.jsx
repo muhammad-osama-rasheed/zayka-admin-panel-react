@@ -1,13 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Products.module.css";
 import DarkBgButton from "../../components/buttons/bgBtn/DarkBgButton";
 import { IoSearchOutline } from "react-icons/io5";
 import CustomTable from "../../components/table/CustomTable";
 import MyContext from "../../context/MyContext";
 import { DARK_GREEN } from "../../utils/colors/Colors";
+import AddModal from "../../components/modals/AddModal";
 function Products() {
   const context = useContext(MyContext);
   const { theme } = context;
+
+  const [showAddModal, setShowAddModal] = useState(false);
+
   const tableHeading = [
     {
       key: "s.no",
@@ -31,29 +35,31 @@ function Products() {
     },
   ];
 
-  const tableValue = [
-    {
-      id: 1,
-      name: "Zayka Burger",
-      image: "https://via.placeholder.com/150",
-      price: "700",
-      category: "Burger",
-    },
-    {
-      id: 2,
-      name: "Classic Burger",
-      image: "https://via.placeholder.com/150",
-      price: "300",
-      category: "Burger",
-    },
-    {
-      id: 3,
-      name: "Peri Peri Pizza",
-      image: "https://via.placeholder.com/150",
-      price: "1200",
-      category: "Pizza",
-    },
-  ];
+  const tableValue = [];
+
+  // const tableValue = [
+  //   {
+  //     id: 1,
+  //     name: "Zayka Burger",
+  //     image: "https://via.placeholder.com/150",
+  //     price: "700",
+  //     category: "Burger",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Classic Burger",
+  //     image: "https://via.placeholder.com/150",
+  //     price: "300",
+  //     category: "Burger",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Peri Peri Pizza",
+  //     image: "https://via.placeholder.com/150",
+  //     price: "1200",
+  //     category: "Pizza",
+  //   },
+  // ];
 
   return (
     <div className="container">
@@ -87,7 +93,10 @@ function Products() {
 
       <div className="row px-1 d-flex justify-content-end align-items-center">
         <div className="col-lg-2 col-md-3 col-4">
-          <DarkBgButton title={"Add Item"} />
+          <DarkBgButton
+            title={"Add Item"}
+            onClick={() => setShowAddModal(true)}
+          />
         </div>
       </div>
 
@@ -97,6 +106,14 @@ function Products() {
         showInfoIcon={true}
         showEditIcon={true}
         showDeleteIcon={true}
+      />
+
+      <AddModal
+        showAddModal={showAddModal}
+        setShowAddModal={setShowAddModal}
+        borderBtnTitle={"Cancel"}
+        bgBtnTitle={"Add Product"}
+        headerTitle={"Add Product"}
       />
     </div>
   );

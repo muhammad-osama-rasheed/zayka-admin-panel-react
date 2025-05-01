@@ -13,6 +13,7 @@ function CustomInput({
   iconOutline,
   bad,
   name,
+  labelColor,
 }) {
   const [isFocused, setIsFocused] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -29,7 +30,10 @@ function CustomInput({
     >
       {(isFocused || value) && (
         <label
-          style={{ color: bad ? "red" : DARK_GREEN }}
+          style={{
+            color: bad ? "red" : DARK_GREEN,
+            backgroundColor: labelColor ? "#f0f8f0" : "#fff",
+          }}
           className={styles.label}
         >
           {title}

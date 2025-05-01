@@ -1,0 +1,35 @@
+.container{
+  margin: 10px 0;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  margin-right: 10px;
+  background-color: #f0f8f0;
+  border: 1px solid #014421;
+  transition: all 0.3s;
+  font-family: "Quicksand", sans-serif;
+}
+
+.container:hover{
+  background-color: #014421;
+}
+
+.container:hover .titleText{
+  color: #fff;
+}
+
+
+
+.titleText{
+  font-size: 12px;
+  font-weight: 600;
+  color: #014421;
+}
+
+.container:hover{
+  opacity: 0.9;
+}
