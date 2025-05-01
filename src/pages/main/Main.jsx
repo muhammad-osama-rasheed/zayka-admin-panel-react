@@ -17,7 +17,6 @@ function Main() {
         showLogout={showLogout}
         setShowLogout={setShowLogout}
       />
-      {/* <Header showMenu={showMenu} setShowMenu={setShowMenu} /> */}
       <Layout
         showMenu={showMenu}
         activeIndex={activeIndex}

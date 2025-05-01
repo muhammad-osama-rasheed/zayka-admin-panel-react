@@ -14,7 +14,6 @@ function Navbar({ showMenu, setShowMenu }) {
     <div
       style={{
         backgroundColor: theme === "dark" ? "#000" : "#fff",
-        // borderBottom: theme === "dark" ? "1px dotted #014421" : "",
         color: theme === "dark" ? "#fff" : "",
       }}
       className={showMenu ? styles.navContainer : styles.navbarContainer}
@@ -28,7 +27,9 @@ function Navbar({ showMenu, setShowMenu }) {
             height: "20px",
             cursor: "pointer",
           }}
-          src="/images/burger.png"
+          src={
+            theme === "dark" ? "/images/hamburger.png" : "/images/burger.png"
+          }
           alt="hamburger"
         />
 
@@ -43,31 +44,15 @@ function Navbar({ showMenu, setShowMenu }) {
           >
             Osama
           </span>
-
-          {/* <div>
-            <Switch
-              checked={checked}
-              onChange={() => {
-                setChecked(!checked);
-                toggleTheme();
-              }}
-              color="success"
-              icon={
-                <img
-                  src="/images/light.png"
-                  alt="light"
-                  style={{ width: "20px", height: "20px" }}
-                />
-              }
-              checkedIcon={
-                <img
-                  src="/images/dark.png"
-                  alt="dark"
-                  style={{ width: "20px", height: "20px" }}
-                />
-              }
-            />
-          </div> */}
+          <span
+            style={{
+              fontSize: "12px",
+              marginLeft: "10px",
+              color: theme === "dark" ? "#fff" : "#000000B3",
+            }}
+          >
+            |
+          </span>
           {theme === "dark" ? (
             <MdLightMode
               style={{

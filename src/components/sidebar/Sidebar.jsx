@@ -50,7 +50,7 @@ function Sidebar({
         activeIndex === 3 ? (
           <Icon.IoPricetag className={styles.icon} />
         ) : (
-          <Icon.IoPricetagOutline gCheckOutline className={styles.icon} />
+          <Icon.IoPricetagOutline className={styles.icon} />
         ),
     },
     {
