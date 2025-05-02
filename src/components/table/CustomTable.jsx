@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./CustomTable.module.css";
 import {
   IoTrashOutline,
@@ -13,9 +13,13 @@ function CustomTable({
   showInfoIcon,
   showEditIcon,
   showDeleteIcon,
+  setShowDeleteModal,
+  setShowUpdateModal,
+  setUpdateItem,
 }) {
   const context = useContext(MyContext);
   const { theme } = context;
+
   return (
     <div
       className={
@@ -52,10 +56,14 @@ function CustomTable({
                       rowIndex + 1
                     ) : col.key === "image" ? (
                       <img
+                        className={styles.tableImage}
                         src={row[col.key]}
                         alt="image"
-                        width="50"
-                        height="50"
+                        style={{
+                          width: "40px",
+                          height: "40px",
+                          objectFit: "contain",
+                        }}
                       />
                     ) : (
                       row[col.key] || "—"
@@ -69,10 +77,19 @@ function CustomTable({
                         <IoInformationCircleOutline className={styles.icon} />
                       )}
                       {showEditIcon && (
-                        <IoCreateOutline className={styles.icon} />
+                        <IoCreateOutline
+                          className={styles.icon}
+                          onClick={() => {
+                            setShowUpdateModal(true);
+                            setUpdateItem(row);
+                          }}
+                        />
                       )}
                       {showDeleteIcon && (
-                        <IoTrashOutline className={styles.icon} />
+                        <IoTrashOutline
+                          className={styles.icon}
+                          onClick={() => setShowDeleteModal(true)}
+                        />
                       )}
                     </div>
                   </td>

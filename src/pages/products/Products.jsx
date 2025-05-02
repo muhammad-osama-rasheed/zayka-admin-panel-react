@@ -6,11 +6,17 @@ import CustomTable from "../../components/table/CustomTable";
 import MyContext from "../../context/MyContext";
 import { DARK_GREEN } from "../../utils/colors/Colors";
 import AddModal from "../../components/modals/AddModal";
+import DeleteModal from "../../components/modals/delete/DeleteModal";
+import UpdateModal from "../../components/modals/update/UpdateModal";
 function Products() {
   const context = useContext(MyContext);
   const { theme } = context;
 
   const [showAddModal, setShowAddModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showUpdateModal, setShowUpdateModal] = useState(false);
+
+  const [updateItem, setUpdateItem] = useState("");
 
   const tableHeading = [
     {
@@ -35,31 +41,31 @@ function Products() {
     },
   ];
 
-  const tableValue = [];
+  // const tableValue = [];
 
-  // const tableValue = [
-  //   {
-  //     id: 1,
-  //     name: "Zayka Burger",
-  //     image: "https://via.placeholder.com/150",
-  //     price: "700",
-  //     category: "Burger",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Classic Burger",
-  //     image: "https://via.placeholder.com/150",
-  //     price: "300",
-  //     category: "Burger",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Peri Peri Pizza",
-  //     image: "https://via.placeholder.com/150",
-  //     price: "1200",
-  //     category: "Pizza",
-  //   },
-  // ];
+  const tableValue = [
+    {
+      id: 1,
+      name: "Zayka Burger",
+      image: "/images/classicburger.png",
+      price: "700",
+      category: "Burger",
+    },
+    {
+      id: 2,
+      name: "Classic Burger",
+      image: "/images/biggiecheese.png",
+      price: "300",
+      category: "Burger",
+    },
+    {
+      id: 3,
+      name: "Peri Peri Pizza",
+      image: "/images/pizza.png",
+      price: "1200",
+      category: "Pizza",
+    },
+  ];
 
   return (
     <div className="container">
@@ -106,6 +112,9 @@ function Products() {
         showInfoIcon={true}
         showEditIcon={true}
         showDeleteIcon={true}
+        setShowDeleteModal={setShowDeleteModal}
+        setShowUpdateModal={setShowUpdateModal}
+        setUpdateItem={setUpdateItem}
       />
 
       <AddModal
@@ -114,6 +123,20 @@ function Products() {
         borderBtnTitle={"Cancel"}
         bgBtnTitle={"Add Product"}
         headerTitle={"Add Product"}
+      />
+
+      <DeleteModal
+        showDeleteModal={showDeleteModal}
+        setShowDeleteModal={setShowDeleteModal}
+        borderBtnTitle={"Cancel"}
+        bgBtnTitle={"Delete Product"}
+        headerTitle={"Delete Product"}
+      />
+
+      <UpdateModal
+        showUpdateModal={showUpdateModal}
+        setShowUpdateModal={setShowUpdateModal}
+        updateItem={updateItem}
       />
     </div>
   );

@@ -29,7 +29,6 @@ function AddModal({
       show={showAddModal}
       onHide={() => setShowAddModal(false)}
       keyboard={true}
-      centered
       backdrop="static"
     >
       <Modal.Header

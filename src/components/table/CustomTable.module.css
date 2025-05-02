@@ -87,3 +87,8 @@ transition: background-color color 0.5s;
 .valueRow{
   border-bottom: 1px dotted rgba(1,68,33,0.2);
 }
+
+.tableImage:hover{
+  transform: scale(1.3);
+  transition: 0.5s ease;
+}
