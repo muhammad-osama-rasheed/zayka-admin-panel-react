@@ -8,6 +8,7 @@ import { Toaster } from "react-hot-toast";
 import ResetPassword from "./auth/resetPassword/ResetPassword";
 import Main from "./pages/main/Main";
 import MyState from "./context/state/MyState";
+import Details from "./pages/orders/details/Details";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={<Main />} />
           <Route path="reset-password/:token" element={<ResetPassword />} />
+          <Route path="/details/:id" element={<Details />} />
         </Routes>
         <Toaster />
       </Router>

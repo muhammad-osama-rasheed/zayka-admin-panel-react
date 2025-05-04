@@ -1,12 +1,4 @@
 import React from "react";
-// import {
-//   PieChart,
-//   Pie,
-//   Cell,
-//   Tooltip,
-//   Legend,
-//   ResponsiveContainer,
-// } from "recharts";
 import { PieChart } from "@mui/x-charts/PieChart";
 import { useContext } from "react";
 import MyContext from "../../context/MyContext";
@@ -32,56 +24,13 @@ const CategoryChart = ({ burger, pizza, seafood, sweets, drinks }) => {
   ];
 
   return (
-    // <div
-    //   style={{
-    //     width: "100%",
-    //     height: 320,
-    //   }}
-    // >
-    //   <h4 style={{ color: "#014421", fontSize: "20px" }}>
-    //     Products Distribution by Category
-    //   </h4>
-    //   <ResponsiveContainer width="100%" height="100%">
-    //     <PieChart style={{ zIndex: -1 }}>
-    //       <Pie
-    //         data={data}
-    //         dataKey="Total"
-    //         nameKey="name"
-    //         cx="50%"
-    //         cy="50%"
-    //         outerRadius={100}
-    //         fill="#014421"
-    //         label
-    //       >
-    //         {data.map((entry, index) => (
-    //           <Cell
-    //             key={`cell-${index}`}
-    //             fill={COLORS[index % COLORS.length]}
-    //           />
-    //         ))}
-    //       </Pie>
-    //       <Tooltip
-    //         contentStyle={{
-    //           color: "#014421",
-    //           borderRadius: "5px",
-    //         }}
-    //       />
-    //       {/* <Legend
-    //         wrapperStyle={{
-    //           color: "#014421",
-    //           fontSize: "10px",
-    //           textAlign: "center",
-    //         }}
-    //       /> */}
-    //     </PieChart>
-    //   </ResponsiveContainer>
-    // </div>
     <>
       <h4
         style={{
           color: theme === "dark" ? "#fff" : "#014421",
           fontSize: "20px",
           transition: "color 0.5s",
+          fontFamily: "Quicksand, sans-serif"
         }}
       >
         Products Category Breakdown

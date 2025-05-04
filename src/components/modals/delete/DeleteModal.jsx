@@ -1,16 +1,51 @@
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import BorderButton from "../../modalBtn/borderButton/BorderButton";
 import BgButton from "../../modalBtn/bg/BgButton";
 import { DARK_GREEN } from "../../../utils/colors/Colors";
-
+import toast from "react-hot-toast";
 function DeleteModal({
   showDeleteModal,
   setShowDeleteModal,
   borderBtnTitle,
   bgBtnTitle,
   headerTitle,
+  title,
+  id,
+  url,
+  method,
 }) {
+  const handleDelete = async () => {
+    try {
+      // setLoading(true);
+
+      const response = await fetch(`${url}/${id}`, {
+        method: "DELETE",
+        // headers: {
+        //   Authorization: localStorage.getItem("jwtToken"),
+        // },
+      });
+
+      const result = await response.json();
+      const { success, message } = result;
+
+      if (success) {
+        method();
+        toast.success(message || "Deleted successfully.");
+
+        setShowDeleteModal(false);
+      } else {
+        toast.error(message || "Failed to delete.");
+        setShowDeleteModal(false);
+      }
+    } catch (error) {
+      toast.error("Failed to delete record.");
+      console.log(error);
+    } finally {
+      // setLoading(false);
+    }
+  };
+
   return (
     <Modal
       show={showDeleteModal}
@@ -53,7 +88,7 @@ function DeleteModal({
         <div className="container">
           <div className="row">
             <div className="col-12">
-              Are you sure you want to delete this Product?
+              Are you sure you want to delete this {title || "product"}?
             </div>
           </div>
         </div>
@@ -64,7 +99,10 @@ function DeleteModal({
           title={borderBtnTitle || "Cancel"}
           onClick={() => setShowDeleteModal(false)}
         />
-        <BgButton title={bgBtnTitle || "Delete"} />
+        <BgButton
+          title={bgBtnTitle || "Delete"}
+          onClick={() => handleDelete()}
+        />
       </Modal.Footer>
     </Modal>
   );

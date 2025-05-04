@@ -18,7 +18,7 @@ function Products() {
 
   const [updateItem, setUpdateItem] = useState("");
 
-  const tableHeading = [
+  let tableHeading = [
     {
       key: "s.no",
       label: "S.No",
@@ -49,23 +49,28 @@ function Products() {
       name: "Zayka Burger",
       image: "/images/classicburger.png",
       price: "700",
-      category: "Burger",
+      category: "burger",
     },
     {
       id: 2,
       name: "Classic Burger",
       image: "/images/biggiecheese.png",
       price: "300",
-      category: "Burger",
+      category: "burger",
     },
     {
       id: 3,
       name: "Peri Peri Pizza",
       image: "/images/pizza.png",
       price: "1200",
-      category: "Pizza",
+      category: "pizza",
     },
   ];
+
+  // tableValue.forEach((item) => {
+  //   item.category =
+  //     item.category.charAt(0).toUpperCase() + item.category.slice(1);
+  // });
 
   return (
     <div className="container">

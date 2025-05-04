@@ -1,0 +1,106 @@
+.heading{
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #014421;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.light-table-container{
+  max-height: 1000px;
+  width: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  margin-bottom: 30px;
+  box-shadow: 0 7px 25px 7px rgba(0,0,0,0.08);
+  border-radius: 25px;
+  margin-top: 20px;
+  border: 1px solid transparent;
+}
+
+.dark-table-container{
+  max-height: 1000px;
+  width: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  margin-top: 20px;
+  border: 1px solid #014421;
+}
+
+.table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-heading, .table-value{
+  text-align: center;
+  font-family: "Quicksand", Arial, sans-serif;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
+.light-table-container .table-heading{
+color: rgba(1,68,33,0.7);
+/* text-transform: uppercase; */
+font-size: 12px;
+letter-spacing: 1px;
+background-color: #fff;
+transition: background-color color 0.5s;
+}
+
+.dark-table-container .table-heading{
+  color: #fff;
+  /* text-transform: uppercase; */
+  font-size: 12px;
+  letter-spacing: 1px;
+  background-color: #014421;
+  transition: background-color color 0.5s;
+}
+
+.light-table-container .table-value{
+  font-size: 13px;
+  color: #666666;
+  background-color: rgba(1,68,33,0.2);
+  cursor: pointer;
+  transition: color background-color 0.5s; 
+}
+
+.dark-table-container .table-value{
+  font-size: 13px;
+  color: #fff;
+  background-color: rgba(1,68,33,0.2);
+  cursor: pointer;
+  transition: color background-color 0.5s; 
+}
+
+.icon{
+  font-size: 15px;
+  transition: 0.5s;
+}
+
+.light-table-container .icon:hover{
+  transform: scale(1.5);
+  color: #014421;
+}
+
+.dark-table-container .icon:hover{
+  transform: scale(1.5);
+  color: #fff;
+}
+
+.valueRow{
+  border-bottom: 1px dotted rgba(1,68,33,0.2);
+}
+
+.tableImage:hover{
+  transform: scale(1.3);
+  transition: 0.5s ease;
+}
