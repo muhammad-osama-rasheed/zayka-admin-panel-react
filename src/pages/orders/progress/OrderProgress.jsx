@@ -3,12 +3,12 @@ import Lottie from "lottie-react";
 import deliveryAnimation from "../../../animations/delivery.json";
 import { DARK_GREEN } from "../../../utils/colors/Colors";
 
-const OrderProgress = ({ currentStatus  }) => {
+const OrderProgress = ({ currentStatus }) => {
   const statuses = ["Pending", "Processing", "Shipped", "Delivered"];
   const currentIndex = statuses.indexOf(currentStatus);
 
   return (
-    <div className="my-5">
+    <div style={{ marginTop: "20px" }}>
       <div className="row mb-4">
         <div className="col-12">
           <span
